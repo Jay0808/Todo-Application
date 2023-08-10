@@ -1,0 +1,16 @@
+<h3>Login</h3>
+<div *ngIf="invalidLogin" class="error-message">{{ errorMessage }}</div>
+
+<form (ngSubmit)="handleLogin()">
+  <label for="username">Username:</label>
+  <input type="text" name="username" [(ngModel)]="username"><br>
+  
+  <!-- Use [(ngModel)] for two-way data binding in password input -->
+  <label for="password">Password:</label>
+  <input type="password" name="password" [(ngModel)]="password"><br>
+  
+  <button type="submit">Login</button>
+</form>
+
+<!-- Display the entered username for testing purposes -->
+Username: {{ username }}
